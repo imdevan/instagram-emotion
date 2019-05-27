@@ -7,25 +7,22 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Getting Started 
 
-Clone the respoistory 
+### Clone the respoistory 
 
 ```
-git clone https://github.com/imdevan/instagram-emotion.git
+git clone https://github.com/imdevan/instagram-emotion.git &&
+cd instagram-emotion
 ``` 
 
-Install dependencies
+### Install dependencies
 ```
-cd instagram-emotion && 
 npm install
 ```
 
-Start the development server
+### Start the development server
 ```
 npm start
 ```
-
-
-### `npm start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
