@@ -9,8 +9,10 @@ const ImageWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  border-bottom: ${border};
 
   ${breakpoints.md} {
+    border-bottom: none;
     border-right: ${border};
     width: 50%;
     height: 100%;

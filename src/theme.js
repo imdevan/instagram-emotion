@@ -4,6 +4,8 @@ export const colors = {
   primary: 'papayaWhip',
   secondary: 'generateKeyPair',
   tertiary: '#e6e6e6',
+  activeHeart: '#ed4956',
+  activeBookmark: '#3897f0',
   background: {
     primary: 'white',
     secondary: '#fafafa'

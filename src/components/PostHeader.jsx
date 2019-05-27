@@ -11,26 +11,28 @@ const UserAvatar = styled.img`
   margin-right: 1rem;
 `
 
+
+const StyledHeader = styled.div`
+  background-color: ${colors.background.primary};
+  width: 100%;
+  height: 72px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  border-bottom: ${border};
+
+  ${breakpoints.md} {
+    width: 50%;
+  }
+`;
+
 export default ({user, ...rest}) => {
   return (
-    <div {...rest} css={css`
-      ${order(rest.order)}
-      background-color: ${colors.background.primary};
-      width: 100%;
-      height: 72px;
-      padding: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: start;
-
-      ${breakpoints.md} {
-        border-bottom: ${border};
-        width: 50%;
-      }
-    `}>
+    <StyledHeader {...rest} css={css`${order(rest.order)}`}>
 
       <UserAvatar src={user.image} alt={user.userName}/>
       <h2>@{user.userName}</h2>
-    </div>
+    </StyledHeader>
   )
 };

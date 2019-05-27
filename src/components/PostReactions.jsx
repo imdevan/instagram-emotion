@@ -16,9 +16,10 @@ const StyledReactions = styled.div`
   display: flex; 
   align-items: center;
   justify-content: space-between;
+  border-bottom: ${border};
 
   ${breakpoints.md} {
-    border-top: ${border};
+    border-bottom: none;
   }
 `
 
@@ -26,12 +27,12 @@ const PostReactions = props => {
   return (
     <StyledReactions {...props} css={css`${order(props.order)}`} >
       <div>
-        <Icon icon={faHeart} marginRight />
+        <Icon icon={faHeart} marginRight activeColor={colors.activeHeart} />
         <Icon icon={faComment} marginRight />
         <Icon icon={faShare} marginRight />
       </div>
 
-      <Icon icon={faBookmark} />
+      <Icon icon={faBookmark} activeColor={colors.activeBookmark} />
     </StyledReactions>
   )
 }

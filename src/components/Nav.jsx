@@ -1,7 +1,6 @@
 // this comment tells babel to convert jsx to calls to a function called jsx instead of React.createElement
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import {Fragment} from 'react'
 
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faCompass } from '@fortawesome/free-solid-svg-icons'
@@ -16,12 +15,6 @@ const navHeight = 60
 
 const Nav = ({iconMarginRight, iconFontSize}) => {
   return (
-    <Fragment>
-    {/* <div css={{
-      display: 'block',
-      height: navHeight
-    }} /> */}
-
     <nav css={{
       boxSizing: 'border-box',
       height: navHeight,
@@ -46,7 +39,6 @@ const Nav = ({iconMarginRight, iconFontSize}) => {
       </div>
     </Container>
     </nav>
-    </Fragment>
   )
 }
 
