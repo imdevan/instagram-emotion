@@ -6,7 +6,6 @@ const Container = styled.div`
   max-width: 1200px;
   width: 100%;
   margin: auto;
-  padding: 0px 40px ;
 
   ${breakpoints.md} {
     max-width: 935px;

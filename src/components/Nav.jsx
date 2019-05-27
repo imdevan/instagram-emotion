@@ -3,13 +3,13 @@
 import { jsx } from '@emotion/core'
 import {Fragment} from 'react'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faCompass } from '@fortawesome/free-solid-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 import Container from './Container';
+import Icon from './Icon'
 import {colors, border} from '../theme'
 
 const navHeight = 60
@@ -37,22 +37,12 @@ const Nav = ({iconMarginRight, iconFontSize}) => {
       justifyContent: 'space-between',
       alignItems: 'center',
     }}>
-      <FontAwesomeIcon icon={faInstagram} css={{
-        fontSize: iconFontSize,
-      }}/>
+      <Icon icon={faInstagram} />
 
       <div>
-        <FontAwesomeIcon icon={faCompass} css={{
-          fontSize: iconFontSize,
-          marginRight: iconMarginRight
-        }} />
-        <FontAwesomeIcon icon={faHeart} css={{
-          fontSize: iconFontSize,
-          marginRight: iconMarginRight
-        }} />
-        <FontAwesomeIcon icon={faUser} css={{
-          fontSize: iconFontSize,
-        }} />
+        <Icon icon={faCompass} marginRight />
+        <Icon icon={faHeart} marginRight />
+        <Icon icon={faUser} />
       </div>
     </Container>
     </nav>
@@ -60,8 +50,4 @@ const Nav = ({iconMarginRight, iconFontSize}) => {
   )
 }
 
-Nav.defaultProps = {
-  iconFontSize: 30,
-  iconMarginRight: 30
-}
 export default Nav;

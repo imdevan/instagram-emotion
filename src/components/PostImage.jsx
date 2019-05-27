@@ -1,14 +1,22 @@
-import React from 'react'
+/** @jsx jsx */
+import {jsx, css} from '@emotion/core'
 import styled from '@emotion/styled'
-import {breakpoints} from '../theme'
+import {breakpoints, order, border} from '../theme'
 
-const StyledImage = styled.img`
-  order: ${({order}) => order || '1'};
+const ImageWrapper = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   ${breakpoints.md} {
-    width: 598px;
-    height: auto;
+    border-right: ${border};
+    width: 50%;
+    height: 100%;
   }
 `
 
-export default props => <StyledImage {...props} />;
+export default props => <ImageWrapper css={css`${order(props.order)}`} >
+  <img {...props} css={css`width: 100%`} />
+</ImageWrapper>;

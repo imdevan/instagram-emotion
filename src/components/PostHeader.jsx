@@ -1,22 +1,36 @@
-import React from 'react'
+/** @jsx jsx */
+import {jsx, css} from '@emotion/core'
 import styled from '@emotion/styled'
-import {breakpoints, colors, border} from '../theme'
+import {breakpoints, colors, border, order} from '../theme'
 
-const StyledHeader = styled.div`
-  order: ${({order}) => order || '1'};
-  background-color: ${colors.background.primary};
-
-  ${breakpoints.md} {
-    border-bottom: ${border};
-    width: 335px;
-    height: 72px;
-  }
+const UserAvatar = styled.img`
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  display: inline-block;
+  margin-right: 1rem;
 `
 
-export default ({userName = 'user', rest}) => {
+export default ({user, ...rest}) => {
   return (
-    <StyledHeader {...rest} >
-      <h2>{userName}</h2>
-    </StyledHeader>
+    <div {...rest} css={css`
+      ${order(rest.order)}
+      background-color: ${colors.background.primary};
+      width: 100%;
+      height: 72px;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+
+      ${breakpoints.md} {
+        border-bottom: ${border};
+        width: 50%;
+      }
+    `}>
+
+      <UserAvatar src={user.image} alt={user.userName}/>
+      <h2>@{user.userName}</h2>
+    </div>
   )
 };
