@@ -1,27 +1,22 @@
-// this comment tells babel to convert jsx to calls to a function called jsx instead of React.createElement
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
+import React from 'react'
+import styled from '@emotion/styled'
+import {breakpoints, colors, border} from '../theme'
 
-const Post = props => {
+const StyledHeader = styled.div`
+  order: ${({order}) => order || '1'};
+  background-color: ${colors.background.primary};
+
+  ${breakpoints.md} {
+    border-bottom: ${border};
+    width: 335px;
+    height: 72px;
+  }
+`
+
+export default ({userName = 'user', rest}) => {
   return (
-    <div css={{
-      maxWidth: 1200,
-      width: '90%',
-      margin: 'auto',
-    }}
-      {...props} />
+    <StyledHeader {...rest} >
+      <h2>{userName}</h2>
+    </StyledHeader>
   )
-}
-
-export const InLinePost = props => {
-  return (
-    <div style={{
-      maxWidth: 1200,
-      width: '90%',
-      margin: 'auto',
-    }}
-      {...props} />
-  )
-}
-
-export default Post;
+};

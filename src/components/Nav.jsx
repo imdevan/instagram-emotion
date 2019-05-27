@@ -2,55 +2,66 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 import {Fragment} from 'react'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faCompass } from '@fortawesome/free-solid-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 
+import Container from './Container';
+import {colors, border} from '../theme'
+
 const navHeight = 60
 
-const Nav = props => {
+const Nav = ({iconMarginRight, iconFontSize}) => {
   return (
     <Fragment>
-    <div css={{
+    {/* <div css={{
       display: 'block',
       height: navHeight
-    }} />
+    }} /> */}
+
     <nav css={{
       boxSizing: 'border-box',
       height: navHeight,
       padding: '0 1rem',
-      left: 0,
-      top: 0,
       width: '100%',
-      backgroundColor: 'white',
-      borderBottom: '1px solid #282828',
+      backgroundColor: colors.background.primary,
+      borderBottom: border,
+    }}> 
+    <Container css={{
+      height: '100%',
       margin: 'auto',
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      position: 'fixed'
-    }} {...props} >
+    }}>
       <FontAwesomeIcon icon={faInstagram} css={{
-        fontSize: 40,
+        fontSize: iconFontSize,
       }}/>
 
       <div>
         <FontAwesomeIcon icon={faCompass} css={{
-          fontSize: 40,
-          marginRight: 10
+          fontSize: iconFontSize,
+          marginRight: iconMarginRight
         }} />
         <FontAwesomeIcon icon={faHeart} css={{
-          fontSize: 40,
-          marginRight: 10
+          fontSize: iconFontSize,
+          marginRight: iconMarginRight
         }} />
         <FontAwesomeIcon icon={faUser} css={{
-          fontSize: 40,
+          fontSize: iconFontSize,
         }} />
       </div>
+    </Container>
     </nav>
     </Fragment>
   )
+}
+
+Nav.defaultProps = {
+  iconFontSize: 30,
+  iconMarginRight: 30
 }
 export default Nav;

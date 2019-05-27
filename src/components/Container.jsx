@@ -1,18 +1,22 @@
-// this comment tells babel to convert jsx to calls to a function called jsx instead of React.createElement
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
+import React from 'react'
+import styled from '@emotion/styled'
+import { breakpoints } from '../theme'
 
-const Container = props => {
-  return (
-    <div css={{
-      maxWidth: 1200,
-      width: '90%',
-      margin: 'auto',
-      overflowX: 'scroll',
-    }}
-    {...props} />
-  )
-}
+const Container = styled.div`
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  padding: 0px 40px ;
+
+  ${breakpoints.md} {
+    max-width: 935px;
+    width: 80%;
+  }
+
+  ${breakpoints.lg} {
+    max-width: 1200px;
+  }
+`;
 
 export const InLineContainer = props => {
   return (
@@ -26,4 +30,4 @@ export const InLineContainer = props => {
   )
 }
 
-export default Container;
+export default (props) => (<Container {...props} />);

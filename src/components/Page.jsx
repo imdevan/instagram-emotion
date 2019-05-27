@@ -1,23 +1,35 @@
-import { Fragment} from 'react';
-
-// this comment tells babel to convert jsx to calls to a function callePage jsx instead of React.createElement
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 
-import Container, { InLineContainer } from './Container';
-import Nav from './Nav';
+import GlobalStyles from './GlobalStyles'
+import Container from './Container'
+import Nav from './Nav'
 import Post from './Post'
+
 
 const Page = (props) => {
   return (
-    <Fragment>
-      <Nav />
+    <div css={{
+      display: 'flex',
+      height: '100%',
+      flexDirection: 'column',
+      alignItems: 'center',
+    }}>
+      <Nav/>
+      <GlobalStyles />
 
-      <Container>
+      <Container css={{
+        margin: 'auto',
+        display: 'flex',
+        flexGrow: '1',
+        height: '100%',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+      }}>
         <Post post={props.post}/>
       </Container>
-    </Fragment>
+    </div>
   )
 }
 
-export default Page;
+export default Page
