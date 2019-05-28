@@ -12,6 +12,8 @@ import Icon from './Icon'
 import {order, colors, border, breakpoints} from '../theme'
 
 const StyledReactions = styled.div`
+  ${props => props.order && order(props.order)}
+
   padding: 1rem;
   display: flex; 
   align-items: center;
@@ -21,11 +23,12 @@ const StyledReactions = styled.div`
   ${breakpoints.md} {
     border-bottom: none;
   }
+
 `
 
 const PostReactions = props => {
   return (
-    <StyledReactions {...props} css={css`${order(props.order)}`} >
+    <StyledReactions {...props} >
       <div>
         <Icon icon={faHeart} marginRight activeColor={colors.activeHeart} />
         <Icon icon={faComment} marginRight />

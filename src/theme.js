@@ -21,16 +21,18 @@ export const breakpoints = {
 }
 
 export const order = (_order) => {
-  if(!_order) return ''
+  let styles = css``
+  if(!_order) return styles;
 
-  const styles = Object.keys(_order).reduce((styles, key) => {
-    return css`
+  Object.keys(_order).forEach((key) => {
+    styles = css`
       ${styles}
+
       ${breakpoints[key]} {
         order: ${_order[key]};
       }
     `
-  }, css``)
+  }) 
 
   return styles
 }

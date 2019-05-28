@@ -17,8 +17,13 @@ const ImageWrapper = styled.div`
     width: 50%;
     height: 100%;
   }
+  
+  ${props => props.order && order(props.order)}
 `
 
-export default props => <ImageWrapper css={css`${order(props.order)}`} >
-  <img {...props} css={css`width: 100%`} />
+const StyledImage = styled.img`
+  width: 100%;
+`
+export default props => <ImageWrapper>
+  <StyledImage {...props} />
 </ImageWrapper>;

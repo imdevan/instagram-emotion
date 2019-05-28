@@ -1,6 +1,4 @@
-// this comment tells babel to convert jsx to calls to a function called jsx instead of React.createElement
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
+import React from 'react'
 import styled from '@emotion/styled'
 import PostHeader from './PostHeader'
 import PostReactions from './PostReactions'

@@ -1,21 +1,25 @@
-/** @jsx jsx */
-import {jsx, css} from '@emotion/core'
+import React, { useState } from 'react'
+import styled from '@emotion/styled'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useState } from 'react';
 
-let Icon = ({fontSize, marginRight, marginRightValue, icon, active: _active, activeColor, ...rest}) => {
-  const [active, setActive] = useState(_active);
+const StyledIcon = styled(FontAwesomeIcon)`
+  transition: color .15s ease-in-out;
+
+  font-size: ${props => props.fontSize}px;
+  margin-right:  ${props => props.marginRight ? props.marginRightValue : 0}px}
+  color:  ${props =>{return props.active && props.activeColor ? props.activeColor : 'currentColor'}}};
+`
+const StyledWrapper = styled.span`
+  cursor: ${props => props.pointer && 'pointer'};
+` 
+
+let Icon = (props) => {
+  const [active, setActive] = useState(false);
 
   return (
-    <span onClick={() => setActive(!active)} css={css`cursor: ${activeColor && 'pointer'};`}>
-    <FontAwesomeIcon icon={icon} css={css`
-      transition: color .15s ease-in-out;
-      font-size: ${fontSize}px;
-      margin-right:  ${marginRight ? marginRightValue : 0}px}
-      color:  ${active && activeColor ? activeColor : 'currentColor'}};
-      
-      `} {...rest} />
-    </span>
+    <StyledWrapper onClick={() => setActive(!active)} pointer={props.activeColor}>
+      <StyledIcon {...props} active={active} />
+    </StyledWrapper>
   )
 }
 

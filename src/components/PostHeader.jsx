@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import {jsx, css} from '@emotion/core'
+import React from 'react'
 import styled from '@emotion/styled'
 import {breakpoints, colors, border, order} from '../theme'
 
@@ -10,7 +9,6 @@ const UserAvatar = styled.img`
   display: inline-block;
   margin-right: 1rem;
 `
-
 
 const StyledHeader = styled.div`
   background-color: ${colors.background.primary};
@@ -25,12 +23,13 @@ const StyledHeader = styled.div`
   ${breakpoints.md} {
     width: 50%;
   }
+
+  ${props => props.order && order(props.order)}
 `;
 
 export default ({user, ...rest}) => {
   return (
-    <StyledHeader {...rest} css={css`${order(rest.order)}`}>
-
+    <StyledHeader {...rest}>
       <UserAvatar src={user.image} alt={user.userName}/>
       <h2>@{user.userName}</h2>
     </StyledHeader>
