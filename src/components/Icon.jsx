@@ -5,9 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const StyledIcon = styled(FontAwesomeIcon)`
   transition: color .15s ease-in-out;
 
-  font-size: ${props => props.fontSize}px;
-  margin-right:  ${props => props.marginRight ? props.marginRightValue : 0}px}
-  color:  ${props =>{return props.active && props.activeColor ? props.activeColor : 'currentColor'}}};
+  font-size: ${({fontSize}) => fontSize}px;
+  margin-right:  ${({marginRight, marginRightValue}) => marginRight ? marginRightValue : 0}px;
+  color:  ${({active, activeColor}) =>{return active && activeColor ? activeColor : 'currentColor'}};
 `
 const StyledWrapper = styled.span`
   cursor: ${props => props.pointer && 'pointer'};
