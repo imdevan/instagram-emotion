@@ -1,34 +1,37 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
+import React from 'react'
+import styled from '@emotion/styled'
 
 import GlobalStyles from './GlobalStyles'
 import Container from './Container'
 import Nav from './Nav'
 import Post from './Post'
 
+const StyledPage = styled.main`
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+`
+
+const StyledContainer = styled(Container)`
+  margin: auto;
+  display: flex;
+  flexGrow: 1;
+  height: 100%;
+  justifyContent: space-between;
+  alignItems: center;
+`
 
 const Page = (props) => {
   return (
-    <div css={{
-      display: 'flex',
-      height: '100%',
-      flexDirection: 'column',
-      alignItems: 'center',
-    }}>
+    <StyledPage>
       <Nav/>
       <GlobalStyles />
 
-      <Container css={{
-        margin: 'auto',
-        display: 'flex',
-        flexGrow: '1',
-        height: '100%',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-      }}>
+      <StyledContainer>
         <Post post={props.post}/>
-      </Container>
-    </div>
+      </StyledContainer>
+    </StyledPage>
   )
 }
 

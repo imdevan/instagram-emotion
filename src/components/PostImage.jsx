@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import {jsx, css} from '@emotion/core'
+import React from 'react'
 import styled from '@emotion/styled'
 import {breakpoints, order, border} from '../theme'
 

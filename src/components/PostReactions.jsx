@@ -1,6 +1,4 @@
-// this comment tells babel to convert jsx to calls to a function called jsx instead of React.createElement
-/** @jsx jsx */
-import { jsx, css } from '@emotion/core'
+import React from 'react'
 import styled from '@emotion/styled'
 
 import { faShare } from '@fortawesome/free-solid-svg-icons'
@@ -23,7 +21,6 @@ const StyledReactions = styled.div`
   ${breakpoints.md} {
     border-bottom: none;
   }
-
 `
 
 const PostReactions = props => {

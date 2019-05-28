@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import {breakpoints, colors, border, order} from '../theme'
+import { breakpoints, colors, border, order } from '../theme'
 
 const UserAvatar = styled.img`
   border-radius: 50%;
