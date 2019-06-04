@@ -1,7 +1,5 @@
-// this comment tells babel to convert jsx to calls to a function called jsx instead of React.createElement
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
-
+import React from 'react'
+import styled from '@emotion/styled'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faCompass } from '@fortawesome/free-solid-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
@@ -9,36 +7,38 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 import Container from './Container';
 import Icon from './Icon'
-import {colors, border} from '../theme'
+import {colors, border, nav} from '../theme'
 
-const navHeight = 60
+const StyledNav = styled.nav`
+  box-sizing: border-box;
+  height: ${nav.height};
+  padding: 0 1rem;
+  width: 100%;
+  background-color: ${colors.background.primary};
+  border-bottom: ${border};
+`;
 
-const Nav = ({iconMarginRight, iconFontSize}) => {
+const StyledContainer = styled(Container)`
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const Nav = () => {
   return (
-    <nav css={{
-      boxSizing: 'border-box',
-      height: navHeight,
-      padding: '0 1rem',
-      width: '100%',
-      backgroundColor: colors.background.primary,
-      borderBottom: border,
-    }}> 
-    <Container css={{
-      height: '100%',
-      margin: 'auto',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-    }}>
-      <Icon icon={faInstagram} />
+    <StyledNav> 
+      <StyledContainer>
+        <Icon icon={faInstagram} />
 
-      <div>
-        <Icon icon={faCompass} marginRight />
-        <Icon icon={faHeart} marginRight />
-        <Icon icon={faUser} />
-      </div>
-    </Container>
-    </nav>
+        <div>
+          <Icon icon={faCompass} marginRight />
+          <Icon icon={faHeart} marginRight />
+          <Icon icon={faUser} />
+        </div>
+      </StyledContainer>
+    </StyledNav>
   )
 }
 

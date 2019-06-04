@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from '@emotion/styled'
 import { breakpoints } from '../theme'
 
@@ -17,16 +16,4 @@ const Container = styled.div`
   }
 `;
 
-export const InLineContainer = props => {
-  return (
-    <div style={{
-      maxWidth: 1200,
-      width: '90%',
-      overflowX: 'scroll',
-      margin: 'auto',
-    }}
-    {...props} />
-  )
-}
-
-export default (props) => (<Container {...props} />);
+export default Container;

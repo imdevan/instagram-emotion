@@ -39,8 +39,13 @@ export const order = (_order) => {
 
 export const border = `1px solid ${colors.tertiary}`
 
+export const nav = {
+  height: '60px'
+}
+
 export default {
   colors,
   breakpoints,
-  border
+  border,
+  nav
 }
