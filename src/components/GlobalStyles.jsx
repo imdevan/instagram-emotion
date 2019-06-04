@@ -1,6 +1,6 @@
 import React from 'react'
 import { Global } from '@emotion/core'
-import {colors} from '../theme'
+import { colors } from '../theme'
 
 export default () => (
   <Global styles={{

@@ -35,7 +35,7 @@ const StyledComments = styled.div`
 const PostComments = ({comments, ...rest}) => {
   return (
     <StyledComments {...rest} >
-      {comments.map(_commenet => <Comment comment={_commenet} />)}
+      {comments.map((_commenet, i) => <Comment key={i} comment={_commenet} />)}
     </StyledComments>
   )
 }

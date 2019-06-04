@@ -10,7 +10,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
   transition: color .15s ease-in-out;
 
   font-size: ${({fontSize}) => fontSize}px;
-  margin-right:  ${({marginRight, marginRightValue}) => marginRight ? marginRightValue : 0}px;
+  margin-right: ${({marginRight}) => marginRight ? 30 : 0}px;
   color:  ${({active, activeColor}) =>{return active && activeColor ? activeColor : 'currentColor'}};
 `
 
@@ -26,7 +26,6 @@ let Icon = (props) => {
 
 Icon.defaultProps = {
   fontSize: 30,
-  marginRightValue: 30,
   active: false
 }
 

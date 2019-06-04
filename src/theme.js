@@ -13,11 +13,11 @@ export const colors = {
 }
 
 export const breakpoints = {
-  xs: `@media (min-width: ${0}px)`,
-  sm: `@media (min-width: ${500}px)`,
-  md: `@media (min-width: ${736}px)`,
-  lg: `@media (min-width: ${1200}px)`,
-  xl: `@media (min-width: ${1600}px)`
+  xs: '@media (min-width: 0px)',
+  sm: '@media (min-width: 500px)',
+  md: '@media (min-width: 736px)',
+  lg: '@media (min-width: 1200px)',
+  xl: '@media (min-width: 1600px)'
 }
 
 export const order = (_order) => {
